@@ -1,0 +1,1 @@
+# Corgi: Docker registry observer
