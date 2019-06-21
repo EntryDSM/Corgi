@@ -9,8 +9,7 @@ case class Config(
                    registryURL: String,
                    userID: String,
                    password: String,
-                   pollingRatePerMinute: Int = 5,
-                   serverCertFilePath: String
+                   pollingRatePerMinute: Int = 5
                  )
 
 object Config {
