@@ -9,13 +9,13 @@ case class Context(
                     registryURL: String,
                     userID: String,
                     password: String,
-                    sleepFunction: SleepFunction[Int],
+                    sleepFunction: SleepFunction,
                     logger: Logger
                   )
 
 object Context {
   def fromConfig(config: Config): Context = {
-    val sleepFunction: SleepFunction[Int] = (minute: Int) => Thread.sleep(minute.minutes.toMillis)
+    val sleepFunction = (minute: Int) => Thread.sleep(minute.minutes.toMillis)
     val logger = Logger("Corgi")
 
     Context(config.registryURL, config.userID, config.password, sleepFunction, logger)
