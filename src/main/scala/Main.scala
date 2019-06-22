@@ -1,7 +1,11 @@
 import config.Config
+import context.Context
 
 object Main {
   def main(args: Array[String]): Unit = {
-    val config = Config.fromArgs(args)
+    val context = for {
+      config <- Config.fromArgs(args)
+    } yield Context.fromConfig(config)
+
   }
 }

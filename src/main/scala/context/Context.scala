@@ -1,3 +1,23 @@
 package context
 
-case class Context()
+import com.typesafe.scalalogging.Logger
+import config.Config
+
+import scala.concurrent.duration._
+
+case class Context(
+                    registryURL: String,
+                    userID: String,
+                    password: String,
+                    sleepFunction: SleepFunction[Int],
+                    logger: Logger
+                  )
+
+object Context {
+  def fromConfig(config: Config): Context = {
+    val sleepFunction: SleepFunction[Int] = (minute: Int) => Thread.sleep(minute.minutes.toMillis)
+    val logger = Logger("Corgi")
+
+    Context(config.registryURL, config.userID, config.password, sleepFunction, logger)
+  }
+}

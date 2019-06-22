@@ -15,7 +15,6 @@ case class Config(
 object Config {
   def fromArgs(args: Array[String]): Option[Config] = {
     implicit val formats: DefaultFormats = DefaultFormats
-
     args match {
       case Array("--config", configFilePath) =>
         val configFile = {
