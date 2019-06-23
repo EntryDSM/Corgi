@@ -6,6 +6,5 @@ object Main {
     val context = for {
       config <- Config.fromArgs(args)
     } yield Context.fromConfig(config)
-
   }
 }
