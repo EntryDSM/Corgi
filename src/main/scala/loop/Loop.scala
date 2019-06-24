@@ -14,10 +14,10 @@ object Loop {
 
   @scala.annotation.tailrec
   def loop(context: Context): Unit = {
-    val imageDigests = for {
+    val registryImageDigestList = for {
       registryImageList <- getRegistryImageList(context)
-      imageDigests <- getImageDigestList(context, registryImageList)
-    } yield imageDigests
+      imageDigestList <- getRegistryImageDigestList(context, registryImageList)
+    } yield imageDigestList
 
     context.sleepFunction(context.pollingRatePerMinute)
     loop(context)
@@ -33,7 +33,7 @@ object Loop {
     body map { registryImageList => registryImageList.repositories }
   }
 
-  def getImageDigestList(context: Context, imageList: List[String]): Option[List[String]] = {
+  def getRegistryImageDigestList(context: Context, imageList: List[String]): Option[List[String]] = {
     val digests = imageList map { imageName =>
       val requestObject = Fetch.authenticatedRequest(context, Method.HEAD, pathForGetRegistryDigest(imageName))
       val response = http(requestObject)
