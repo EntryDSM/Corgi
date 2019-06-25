@@ -14,18 +14,65 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.8:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.shaka:naive-http_2.12:104:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.25:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.12.8:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.scala-logging:scala-logging_2.12:3.9.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: ch.qos.logback:logback-core:1.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: ch.qos.logback:logback-classic:1.2.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalaz:scalaz-core_2.12:7.2.27:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalaz:scalaz-ioeffect_2.12:2.10.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-ast_2.12:3.6.6:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-core_2.12:3.6.6:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.json4s:json4s-native_2.12:3.6.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.ow2.asm:asm-util:5.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.ow2.asm:asm-tree:5.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.ow2.asm:asm-commons:5.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.ow2.asm:asm-analysis:5.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.ow2.asm:asm:5.0.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.javassist:javassist:3.18.1-GA:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.jersey.media:jersey-media-json-jackson:2.22.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.jersey.ext:jersey-entity-filtering:2.22.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.jersey.core:jersey-common:2.22.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.jersey.core:jersey-client:2.22.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.jersey.connectors:jersey-apache-connector:2.22.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.22.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.hk2.external:javax.inject:2.4.0-b34:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.hk2.external:aopalliance-repackaged:2.4.0-b34:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.hk2:osgi-resource-locator:1.0.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.hk2:hk2-utils:2.4.0-b34:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.hk2:hk2-locator:2.4.0-b34:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.glassfish.hk2:hk2-api:2.4.0-b34:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.bouncycastle:bcprov-jdk15on:1.60:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.bouncycastle:bcpkix-jdk15on:1.60:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpcore:4.4.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.httpcomponents:httpclient:4.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.commons:commons-compress:1.18:jar" level="project" />
+    <orderEntry type="library" name="sbt: javax.ws.rs:javax.ws.rs-api:2.0.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: javax.annotation:javax.annotation-api:1.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: javax.activation:activation:1.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-lang:commons-lang:2.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-io:commons-io:2.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-codec:commons-codec:1.9:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.spotify:docker-client:8.16.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.guava:guava:20.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jnr-x86asm:1.0.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jnr-unixsocket:0.18:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jnr-posix:3.0.35:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jnr-ffi:2.1.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jnr-enxio:0.16:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jnr-constants:0.9.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jffi:1.2.15:native:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.github.jnr:jffi:1.2.15:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.9.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.datatype:jackson-datatype-guava:2.9.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-databind:2.9.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-core:2.9.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-annotations:2.9.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.json4s:json4s-scalap_2.12:3.6.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-native_2.12:3.6.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-core_2.12:3.6.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.json4s:json4s-ast_2.12:3.6.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalaz:scalaz-ioeffect_2.12:2.10.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalaz:scalaz-core_2.12:7.2.27:jar" level="project" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-classic:1.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-core:1.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.scala-logging:scala-logging_2.12:3.9.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.12.8:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.25:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.shaka:naive-http_2.12:104:jar" level="project" />
   </component>
 </module>

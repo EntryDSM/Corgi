@@ -12,18 +12,22 @@ import util.Fetch
 
 object Loop {
 
+  type ImageName = String
+
+  type ImageDigest = String
+
   @scala.annotation.tailrec
   def loop(context: Context): Unit = {
     val registryImageDigestList = for {
       registryImageList <- getRegistryImageList(context)
       imageDigestList <- getRegistryImageDigestList(context, registryImageList)
-    } yield imageDigestList
+    } yield (registryImageList zip imageDigestList).toMap
 
     context.sleepFunction(context.pollingRatePerMinute)
     loop(context)
   }
 
-  def getRegistryImageList(context: Context): Option[List[String]] = {
+  def getRegistryImageList(context: Context): Option[List[ImageName]] = {
     val requestObject = Fetch.authenticatedRequest(context, Method.GET, pathForGetRegistryImageList)
     val response = http(requestObject)
     val body = for {
@@ -33,7 +37,7 @@ object Loop {
     body map { registryImageList => registryImageList.repositories }
   }
 
-  def getRegistryImageDigestList(context: Context, imageList: List[String]): Option[List[String]] = {
+  def getRegistryImageDigestList(context: Context, imageList: List[String]): Option[List[ImageDigest]] = {
     val digests = imageList map { imageName =>
       val requestObject = Fetch.authenticatedRequest(context, Method.HEAD, pathForGetRegistryDigest(imageName))
       val response = http(requestObject)
@@ -55,4 +59,5 @@ object Loop {
   }
 
   case class RegistryImageList(repositories: List[String])
+
 }
