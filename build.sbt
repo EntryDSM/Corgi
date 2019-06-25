@@ -12,5 +12,6 @@ libraryDependencies ++= Seq(
   "org.json4s" %% "json4s-native" % "3.6.6",
   "ch.qos.logback" % "logback-classic" % "1.2.3",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
-  "io.shaka" %% "naive-http" % "104"
+  "io.shaka" %% "naive-http" % "104",
+  "com.spotify" % "docker-client" % "8.16.0"
 )

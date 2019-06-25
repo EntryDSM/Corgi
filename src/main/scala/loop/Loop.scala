@@ -17,7 +17,7 @@ object Loop {
     val registryImageDigestList = for {
       registryImageList <- getRegistryImageList(context)
       imageDigestList <- getRegistryImageDigestList(context, registryImageList)
-    } yield imageDigestList
+    } yield (registryImageList zip imageDigestList).toMap
 
     context.sleepFunction(context.pollingRatePerMinute)
     loop(context)
