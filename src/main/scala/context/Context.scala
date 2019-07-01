@@ -13,14 +13,22 @@ case class Context(
                     runScripts: Map[String, String],
                     sleepFunction: SleepFunction,
                     logger: Logger,
+                    dockerEngineSocket: String
                   )
 
 object Context {
   def fromConfig(config: Config): Context = {
     val sleepFunction = (minute: Int) => Thread.sleep(minute.minutes.toMillis)
     val logger = Logger("Corgi")
-    val (registryURL, userID, password, pollingRatePerMinute, runScripts) = Config.unapply(config).get
+    val (
+      registryURL,
+      userID,
+      password,
+      pollingRatePerMinute,
+      runScripts,
+      dockerEngineSocket
+      ) = Config.unapply(config).get
 
-    Context(registryURL, userID, password, pollingRatePerMinute, runScripts, sleepFunction, logger)
+    Context(registryURL, userID, password, pollingRatePerMinute, runScripts, sleepFunction, logger, dockerEngineSocket)
   }
 }

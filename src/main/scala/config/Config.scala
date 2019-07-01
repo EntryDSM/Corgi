@@ -10,7 +10,8 @@ case class Config(
                    userID: String,
                    password: String,
                    pollingRatePerMinute: Int = 5,
-                   runScripts: Map[String, String]
+                   runScripts: Map[String, String],
+                   dockerEngineSocket: String
                  )
 
 object Config {
