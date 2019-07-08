@@ -4,10 +4,6 @@ import context.Context
 
 object Loop {
 
-  type ImageName = String
-
-  type ImageDigest = String
-
   @scala.annotation.tailrec
   def loop(context: Context): Unit = {
     val newestImageDigestMap = for {

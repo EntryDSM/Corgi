@@ -1,7 +1,7 @@
 import context.Context
+import docker.{ImageDigest, ImageName}
 import io.shaka.http.Http.http
 import io.shaka.http.{HttpHeader, Method}
-import loop.Loop.{ImageDigest, ImageName}
 import org.json4s.DefaultFormats
 import org.json4s.native.JsonMethods.parse
 import scalaz.std.list.listInstance
