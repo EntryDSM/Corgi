@@ -33,6 +33,13 @@ object Loop {
       } yield remoteKey
     }
 
+    val commands = needingUpdateImageList map { updatingImageList =>
+      for {
+        updatingImage <- updatingImageList
+        runCommand <- context.runScripts.get(updatingImage)
+      } yield runCommand
+    }
+
     context.sleepFunction(context.pollingRatePerMinute)
     loop(context)
   }
