@@ -12,24 +12,38 @@ import util.Fetch
 package object registry {
 
   def getRegistryImageList(context: Context): Option[List[ImageName]] = {
-    val requestObject = Fetch.authenticatedRequest(context, Method.GET, pathForGetRegistryImageList)
+    val requestObject = Fetch.authenticatedRequest(
+      context,
+      Method.GET,
+      pathForGetRegistryImageList
+    )
     val response = http(requestObject)
     val body = for {
       entity <- response.entity
     } yield parse(entity.toString()).extract[RegistryImageList]
 
-    body map { registryImageList => registryImageList.repositories }
+    body map { registryImageList =>
+      registryImageList.repositories
+    }
   }
 
   private def pathForGetRegistryImageList = "/v2/_catalog"
 
   implicit val formats: DefaultFormats = DefaultFormats
 
-  def getRegistryImageDigestList(context: Context, imageList: List[String]): Option[List[ImageDigest]] = {
+  def getRegistryImageDigestList(
+    context: Context,
+    imageList: List[String]
+  ): Option[List[ImageDigest]] = {
     val digests = imageList map { imageName =>
-      val requestObject = Fetch.authenticatedRequest(context, Method.HEAD, pathForGetRegistryDigest(imageName))
+      val requestObject = Fetch.authenticatedRequest(
+        context,
+        Method.HEAD,
+        pathForGetRegistryDigest(imageName)
+      )
       val response = http(requestObject)
-      val digest = response.header(HttpHeader.unknownHeader(dockerDigestHeaderFieldName))
+      val digest =
+        response.header(HttpHeader.unknownHeader(dockerDigestHeaderFieldName))
 
       digest
     }
