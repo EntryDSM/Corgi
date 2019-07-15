@@ -17,6 +17,8 @@ object Loop {
       )
     } yield (registryImageNameList zip imageDigestList).toMap
 
+    context.logger.info("First: Successfully get newest image digests.")
+
     val localImageDigestMap = for {
       imageList <- docker.getImageList(context)
       digestList = docker.getDigestList(imageList)
@@ -27,6 +29,8 @@ object Loop {
       mapOfDuplicatedImageNameToDigest.groupBy(_._1).map {
         case (key, value) => (key, value.map(_._2))
       }
+
+    context.logger.info("Second: Successfully get local image digests.")
 
     def isLocalImageNewest(localImageDigestList: List[ImageDigest],
                            remoteImageDigest: ImageDigest): Boolean = {
@@ -56,6 +60,8 @@ object Loop {
     } {
       command !
     }
+
+    context.logger.info("Third: Successfully change image")
 
     context.sleepFunction(context.pollingRatePerMinute)
     loop(context)
